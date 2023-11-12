@@ -5,26 +5,26 @@ Aero Utilities is a JavaScript utility designed to facilitate DOM element manipu
 
 -----------------------------------------------------------
 
------ FEATURES -----
+## FEATURES
 
-* Element Reordering:
--> Move elements in the DOM to different targets at different breakpoints.
+### Element Reordering:
+* Move elements in the DOM to different targets at different breakpoints.
 
-* Dynamic Element Handling:
--> Automatically adapts to dynamically added elements with the same specified selector.
+### Dynamic Element Handling:
+* Automatically adapts to dynamically added elements with the same specified selector.
 
-* Update Classes on <body>:
--> Add classes to <body> based on the active breakpoint.
+### Update Classes on <body>:
+* Add classes to <body> based on the active breakpoint.
 
-* Dynamic Breakpoints Update:
--> Allows dynamic updating of breakpoints after initialization.
+### Dynamic Breakpoints Update:
+* Allows dynamic updating of breakpoints after initialization.
 
 -----------------------------------------------------------
 
------ HOW TO USE -----
+## HOW TO USE
 
-* Usage for Element Reordering:
-
+### Usage for Element Reordering:
+```js
 const myElement = new AeroUtilities({
   element: '#my-element',
   type: 'reorder',
@@ -35,13 +35,14 @@ const myElement = new AeroUtilities({
   sm: ['#top .content', 'insertBefore'],
   xs: ['#top .content', 'insertAfter'],
 });
+```
 
-* Usage for Updating Classes on <body>:
-
+### Usage for Updating Classes on <body>:
+```js
 const aeroUtilitiesDevices = new AeroUtilities();
-
-* Usage for Updating Breakpoints values
-
+```
+### Usage for Updating Breakpoints values
+```js
 const customBreakpoints = {
 	xxl: 1800,
 	xl: 1400,
@@ -51,47 +52,46 @@ const customBreakpoints = {
 	xs: 0,
 };
 AeroUtilities.updateAllBreakpoints(customBreakpoints);
+```
+-----------------------------------------------------------
+
+## AVAILABLE OPTIONS
+
+### Element Reordering:
+* Element: Selector of the element to be moved.
+* Type: Should be set to 'reorder'.
+* Breakpoints and corresponding actions:
+   - xxl: [target, method]
+   - xl:  [target, method]
+   - lg:  [target, method]
+   - md:  [target, method]
+   - sm:  [target, method]
+   - xs:  [target, method]
+
+### Dynamic Element Handling:
+* Automatically handles dynamically added elements with the specified selector.
+
+### Dynamic Breakpoints Update:
+* Allows dynamic updating of breakpoints after initialization.
 
 -----------------------------------------------------------
 
------ AVAILABLE OPTIONS -----
+## METHODS
 
-* Element Reordering:
--> Element: Selector of the element to be moved.
--> Type: Should be set to 'reorder'.
--> Breakpoints and corresponding actions:
-   || xxl: [target, method]
-   || xl:  [target, method]
-   || lg:  [target, method]
-   || md:  [target, method]
-   || sm:  [target, method]
-   || xs:  [target, method]
+### prependTo:
+* The element will be prepended to the specified target.
 
-* Dynamic Element Handling:
--> Automatically handles dynamically added elements with the specified selector.
+### appendTo:
+* The element will be appended to the specified target.
 
-* Dynamic Breakpoints Update:
--> Allows dynamic updating of breakpoints after initialization.
+### insertBefore:
+* The element will be inserted before the specified target.
+
+### insertAfter:
+* The element will be inserted after the specified target.
 
 -----------------------------------------------------------
 
------ METHODS -----
-
-* prependTo:
--> The element will be prepended to the specified target.
-
-* appendTo:
--> The element will be appended to the specified target.
-
-* insertBefore:
--> The element will be inserted before the specified target.
-
-* insertAfter:
--> The element will be inserted after the specified target.
-
------------------------------------------------------------
-
------ IMPORTANT NOTES -----
-
--> Ensure that the specified elements and targets exist on the page to avoid errors.
--> The element reordering function will only be triggered when a real breakpoint change occurs.
+[!IMPORTANT]
+> Ensure that the specified elements and targets exist on the page to avoid errors.
+> The element reordering function will only be triggered when a real breakpoint change occurs.
